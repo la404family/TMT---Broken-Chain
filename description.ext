@@ -1,0 +1,132 @@
+class CfgMusic
+{
+    tracks[] = {00intro, 00outro, 00suspense, 00liberation, 00mortOtage, 00mortConducteur};
+
+    class 00intro
+    {
+        name = "00intro";
+        sound[] = {"00intro.ogg", db+15, 1.0};
+    };
+    class 00outro
+    {
+        name = "00outro";
+        sound[] = {"00outro.ogg", db+15, 1.0};
+    };
+    class 00suspense
+    {
+        name = "00suspense";
+        sound[] = {"00suspense.ogg", db+5, 1.0};
+    };
+    class 00liberation
+    {
+        name = "00liberation";
+        sound[] = {"00liberation.ogg", db+5, 1.0};
+    };
+    class 00mortOtage
+    {
+        name = "00mortOtage";
+        sound[] = {"00mortOtage.ogg", db+5, 1.0};
+    };
+    class 00mortConduc
+    {
+        name = "00mortConduc";
+        sound[] = {"00mortConduc.ogg", db+5, 1.0};
+    };
+};
+
+ // Turkish Male Identities for Arma 3 Mission
+class CfgIdentities
+{
+    // Correction : Soldier01 à Soldier91, noms uniques
+    class Soldier01 { name = "Yılmaz"; speaker = "Male01ENG"; face = "WhiteHead_01"; pitch = 0.8; };
+    class Soldier02 { name = "Demir"; speaker = "Male02ENG"; face = "WhiteHead_02"; pitch = 0.98; };
+    class Soldier03 { name = "Kaya"; speaker = "Male03ENG"; face = "WhiteHead_03"; pitch = 0.8; };
+    class Soldier04 { name = "Çelik"; speaker = "Male04ENG"; face = "WhiteHead_04"; pitch = 0.8; };
+    class Soldier05 { name = "Öztürk"; speaker = "Male05ENG"; face = "PersianHead_A3_01"; pitch = 0.95; };
+    class Soldier06 { name = "Aydın"; speaker = "Male06ENG"; face = "WhiteHead_06"; pitch = 1.0; };
+    class Soldier07 { name = "Şahin"; speaker = "Male07ENG"; face = "WhiteHead_07"; pitch = 0.9; };
+    class Soldier08 { name = "Karaca"; speaker = "Male08ENG"; face = "WhiteHead_08"; pitch = 0.97; };
+    class Soldier09 { name = "Arslan"; speaker = "Male09ENG"; face = "WhiteHead_09"; pitch = 0.95; };
+    class Soldier10 { name = "Kılıç"; speaker = "Male10ENG"; face = "WhiteHead_10"; pitch = 1.0; };
+    class Soldier11 { name = "Doğan"; speaker = "Male11ENG"; face = "WhiteHead_11"; pitch = 0.99; };
+    class Soldier12 { name = "Aksoy"; speaker = "Male12ENG"; face = "WhiteHead_12"; pitch = 1.0; };
+    class Soldier13 { name = "Erdem"; speaker = "Male01ENG"; face = "WhiteHead_13"; pitch = 0.8; };
+    class Soldier14 { name = "Polat"; speaker = "Male02ENG"; face = "PersianHead_A3_02"; pitch = 0.95; };
+    class Soldier15 { name = "Koç"; speaker = "Male03ENG"; face = "WhiteHead_15"; pitch = 0.95; };
+    class Soldier16 { name = "Ünal"; speaker = "Male04ENG"; face = "WhiteHead_16"; pitch = 0.9; };
+    class Soldier17 { name = "Gündoğdu"; speaker = "Male05ENG"; face = "WhiteHead_17"; pitch = 1.0; };
+    class Soldier18 { name = "Özdemir"; speaker = "Male06ENG"; face = "WhiteHead_18"; pitch = 0.95; };
+    class Soldier19 { name = "Şimşek"; speaker = "Male07ENG"; face = "PersianHead_A3_02"; pitch = 1.0; };
+    class Soldier20 { name = "Çetin"; speaker = "Male08ENG"; face = "WhiteHead_20"; pitch = 0.98; };
+    class Soldier21 { name = "Soylu"; speaker = "Male09ENG"; face = "WhiteHead_21"; pitch = 1.0; };
+    class Soldier22 { name = "Toprak"; speaker = "Male10ENG"; face = "PersianHead_A3_03"; pitch = 1.0; };
+    class Soldier23 { name = "Tekin"; speaker = "Male11ENG"; face = "GreekHead_A3_02"; pitch = 0.96; };
+    class Soldier24 { name = "Ateş"; speaker = "Male12ENG"; face = "GreekHead_A3_03"; pitch = 1.0; };
+    class Soldier25 { name = "Kaplan"; speaker = "Male01ENG"; face = "GreekHead_A3_04"; pitch = 0.95; };
+    class Soldier26 { name = "Çiftçi"; speaker = "Male02ENG"; face = "PersianHead_A3_03"; pitch = 1.0; };
+    class Soldier27 { name = "Uçar"; speaker = "Male03ENG"; face = "GreekHead_A3_06"; pitch = 1.0; };
+    class Soldier28 { name = "Sönmez"; speaker = "Male04ENG"; face = "GreekHead_A3_07"; pitch = 0.88; };
+    class Soldier29 { name = "İnce"; speaker = "Male05ENG"; face = "GreekHead_A3_08"; pitch = 1.0; };
+    class Soldier30 { name = "Balcı"; speaker = "Male06ENG"; face = "GreekHead_A3_08"; pitch = 1.0; };
+    class Soldier31 { name = "Yücel"; speaker = "Male07ENG"; face = "GreekHead_A3_09"; pitch = 0.95; };
+    class Soldier32 { name = "Türkmen"; speaker = "Male01ENG"; face = "WhiteHead_01"; pitch = 0.9; };
+    class Soldier33 { name = "Altın"; speaker = "Male02ENG"; face = "WhiteHead_02"; pitch = 0.95; };
+    class Soldier34 { name = "Yaman"; speaker = "Male03ENG"; face = "WhiteHead_03"; pitch = 0.85; };
+    class Soldier35 { name = "Başar"; speaker = "Male04ENG"; face = "WhiteHead_04"; pitch = 0.9; };
+    class Soldier36 { name = "Özkan"; speaker = "Male05ENG"; face = "PersianHead_A3_01"; pitch = 0.92; };
+    class Soldier37 { name = "Bulut"; speaker = "Male06ENG"; face = "WhiteHead_06"; pitch = 1.0; };
+    class Soldier38 { name = "Taş"; speaker = "Male07ENG"; face = "WhiteHead_07"; pitch = 0.88; };
+    class Soldier39 { name = "Güven"; speaker = "Male08ENG"; face = "WhiteHead_08"; pitch = 0.96; };
+    class Soldier40 { name = "Sezer"; speaker = "Male09ENG"; face = "WhiteHead_09"; pitch = 0.94; };
+    class Soldier41 { name = "Kara"; speaker = "Male10ENG"; face = "WhiteHead_10"; pitch = 1.0; };
+    class Soldier42 { name = "Erdemir"; speaker = "Male01ENG"; face = "WhiteHead_11"; pitch = 0.97; };
+    class Soldier43 { name = "Güneş"; speaker = "Male02ENG"; face = "WhiteHead_12"; pitch = 1.0; };
+    class Soldier44 { name = "Aslan"; speaker = "Male03ENG"; face = "WhiteHead_13"; pitch = 0.85; };
+    class Soldier45 { name = "Doğru"; speaker = "Male04ENG"; face = "PersianHead_A3_02"; pitch = 0.93; };
+    class Soldier46 { name = "Bozkurt"; speaker = "Male05ENG"; face = "WhiteHead_15"; pitch = 0.95; };
+    class Soldier47 { name = "Yıldırım"; speaker = "Male06ENG"; face = "WhiteHead_16"; pitch = 0.9; };
+    class Soldier48 { name = "Çakır"; speaker = "Male07ENG"; face = "WhiteHead_17"; pitch = 1.0; };
+    class Soldier49 { name = "Tuncel"; speaker = "Male08ENG"; face = "WhiteHead_18"; pitch = 0.95; };
+    class Soldier50 { name = "Duman"; speaker = "Male09ENG"; face = "PersianHead_A3_03"; pitch = 1.0; };
+    class Soldier51 { name = "Sarı"; speaker = "Male10ENG"; face = "WhiteHead_20"; pitch = 0.98; };
+    class Soldier52 { name = "Yalçın"; speaker = "Male01ENG"; face = "WhiteHead_21"; pitch = 1.0; };
+    class Soldier53 { name = "Koşar"; speaker = "Male02ENG"; face = "PersianHead_A3_04"; pitch = 1.0; };
+    class Soldier54 { name = "Demirtaş"; speaker = "Male03ENG"; face = "GreekHead_A3_02"; pitch = 0.96; };
+    class Soldier55 { name = "Bayraktar"; speaker = "Male04ENG"; face = "GreekHead_A3_03"; pitch = 1.0; };
+    class Soldier56 { name = "Güngör"; speaker = "Male05ENG"; face = "GreekHead_A3_04"; pitch = 0.95; };
+    class Soldier57 { name = "Gül"; speaker = "Male06ENG"; face = "PersianHead_A3_05"; pitch = 1.0; };
+    class Soldier58 { name = "Ersoy"; speaker = "Male07ENG"; face = "GreekHead_A3_06"; pitch = 1.0; };
+    class Soldier59 { name = "Tunç"; speaker = "Male08ENG"; face = "GreekHead_A3_07"; pitch = 0.88; };
+    class Soldier60 { name = "Efe"; speaker = "Male09ENG"; face = "GreekHead_A3_08"; pitch = 1.0; };
+    class Soldier61 { name = "Akgül"; speaker = "Male10ENG"; face = "GreekHead_A3_08"; pitch = 1.0; };
+    class Soldier62 { name = "Yılmazer"; speaker = "Male01ENG"; face = "WhiteHead_01"; pitch = 0.8; };
+    class Soldier63 { name = "Kayalı"; speaker = "Male02ENG"; face = "WhiteHead_02"; pitch = 0.98; };
+    class Soldier64 { name = "Demirer"; speaker = "Male03ENG"; face = "WhiteHead_03"; pitch = 0.8; };
+    class Soldier65 { name = "Çeliker"; speaker = "Male04ENG"; face = "WhiteHead_04"; pitch = 0.8; };
+    class Soldier66 { name = "Aksu"; speaker = "Male05ENG"; face = "PersianHead_A3_01"; pitch = 0.95; };
+    class Soldier67 { name = "Arslaner"; speaker = "Male06ENG"; face = "WhiteHead_06"; pitch = 1.0; };
+    class Soldier68 { name = "Koçer"; speaker = "Male07ENG"; face = "WhiteHead_07"; pitch = 0.9; };
+    class Soldier69 { name = "Akıncı"; speaker = "Male08ENG"; face = "WhiteHead_08"; pitch = 0.97; };
+    class Soldier70 { name = "Güler"; speaker = "Male09ENG"; face = "WhiteHead_09"; pitch = 0.95; };
+    class Soldier71 { name = "Yıldız"; speaker = "Male10ENG"; face = "WhiteHead_10"; pitch = 1.0; };
+    class Soldier72 { name = "Şen"; speaker = "Male11ENG"; face = "WhiteHead_11"; pitch = 0.99; };
+    class Soldier73 { name = "Beyaz"; speaker = "Male12ENG"; face = "WhiteHead_12"; pitch = 1.0; };
+    class Soldier74 { name = "Mert"; speaker = "Male01ENG"; face = "WhiteHead_13"; pitch = 0.8; };
+    class Soldier75 { name = "Erdoğan"; speaker = "Male02ENG"; face = "GreekHead_A3_01"; pitch = 0.95; };
+    class Soldier76 { name = "Korkmaz"; speaker = "Male03ENG"; face = "WhiteHead_15"; pitch = 0.95; };
+    class Soldier77 { name = "Öğüt"; speaker = "Male04ENG"; face = "WhiteHead_16"; pitch = 0.9; };
+    class Soldier78 { name = "Kurt"; speaker = "Male05ENG"; face = "WhiteHead_17"; pitch = 1.0; };
+    class Soldier79 { name = "Akbaş"; speaker = "Male06ENG"; face = "WhiteHead_18"; pitch = 0.95; };
+    class Soldier80 { name = "Yavuz"; speaker = "Male07ENG"; face = "PersianHead_A3_02"; pitch = 1.0; };
+    class Soldier81 { name = "Bayrak"; speaker = "Male08ENG"; face = "WhiteHead_20"; pitch = 0.98; };
+    class Soldier82 { name = "Özer"; speaker = "Male09ENG"; face = "WhiteHead_21"; pitch = 1.0; };
+    class Soldier83 { name = "Çınar"; speaker = "Male10ENG"; face = "GreekHead_A3_02"; pitch = 1.0; };
+    class Soldier84 { name = "Akbulut"; speaker = "Male11ENG"; face = "GreekHead_A3_03"; pitch = 0.96; };
+    class Soldier85 { name = "Işık"; speaker = "Male12ENG"; face = "GreekHead_A3_04"; pitch = 1.0; };
+    class Soldier86 { name = "Karadağ"; speaker = "Male01ENG"; face = "GreekHead_A3_05"; pitch = 0.95; };
+    class Soldier87 { name = "Sancak"; speaker = "Male02ENG"; face = "GreekHead_A3_06"; pitch = 1.0; };
+    class Soldier88 { name = "Türk"; speaker = "Male03ENG"; face = "GreekHead_A3_07"; pitch = 1.0; };
+    class Soldier89 { name = "Baran"; speaker = "Male04ENG"; face = "GreekHead_A3_08"; pitch = 0.88; };
+    class Soldier90 { name = "Elmas"; speaker = "Male05ENG"; face = "GreekHead_A3_09"; pitch = 1.0; };
+    class Soldier91 { name = "Güzel"; speaker = "Male06ENG"; face = "GreekHead_A3_10"; pitch = 1.0; };
+}
