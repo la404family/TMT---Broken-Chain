@@ -43,7 +43,6 @@ fnc_regroupAI = {
             // Ordonner à l'IA de se déplacer vers sa position assignée
             _x doMove _targetPos;
             _x setUnitPos "UP"; // Assurer que l'IA est debout pour plus de réactivité
-            _x groupChat format ["%1 se regroupe sur votre position, chef !", name _x];
             
             // Ajouter des compétences (optimisé)
             _x setSkill ["aimingAccuracy", 0.9];
@@ -63,15 +62,15 @@ fnc_regroupAI = {
 // Fonction pour démarrer la boucle de regroupement
 fnc_startRegroupLoop = {
     if (missionNamespace getVariable ["RegroupLoopActive", false]) exitWith {
-        hint "Le regroupement est déjà actif !";
+        hint "Regrouping is already active!";
     };
     
     if !(call fnc_isPlayerLeader) exitWith {
-        hint "Vous devez être le leader pour utiliser cette commande !";
+        hint "You must be the leader to use this command!";
     };
     
     missionNamespace setVariable ["RegroupLoopActive", true];
-    hint "Regroupement des troupes activé (2 cycles)";
+    hint "Troop regrouping activated";
     
     // Lancer la boucle dans un thread séparé
     [] spawn {
@@ -82,15 +81,10 @@ fnc_startRegroupLoop = {
             // Vérifier si le joueur est toujours leader
             if !(call fnc_isPlayerLeader) exitWith {
                 missionNamespace setVariable ["RegroupLoopActive", false];
-                hint "Regroupement arrêté : vous n'êtes plus le leader";
+                hint "Regrouping stopped: you are no longer the leader";
             };
             
             call fnc_regroupAI;
-            
-            // Afficher le compteur
-            if (missionNamespace getVariable ["RegroupLoopActive", false]) then {
-                hintSilent format ["Motivation des troupes : %1/2", _i];
-            };
             
             sleep 15;
         };
@@ -100,26 +94,25 @@ fnc_startRegroupLoop = {
         {
             if (!isPlayer _x && alive _x) then {
                 _x doFollow player; // Les IA suivent le joueur après le regroupement
-                _x groupChat "Regroupement terminé, on vous suit, chef !";
             };
         } forEach (units group player);
-        hint "Regroupement terminé.";
+        hint "Regrouping complete.";
     };
 };
 
 // Fonction pour arrêter la boucle
 fnc_stopRegroupLoop = {
     if !(missionNamespace getVariable ["RegroupLoopActive", false]) exitWith {
-        hint "Aucun regroupement en cours";
+        hint "No regrouping in progress";
     };
     
     missionNamespace setVariable ["RegroupLoopActive", false];
     {
         if (!isPlayer _x && alive _x) then {
-            _x groupChat "Ordre reçu, on arrête le regroupement.";
+            _x groupChat "Order received, stopping regrouping.";
         };
     } forEach (units group player);
-    hint "Regroupement des troupes arrêté";
+    hint "Troop regrouping stopped";
 };
 
 // INITIALISATION DES ACTIONS
@@ -133,8 +126,8 @@ fnc_updateRegroupAction = {
     
     // Ajouter l'action si le joueur est leader
     if (call fnc_isPlayerLeader) then {
-        _actionID = player addAction [
-            "<t color='#00FF00'>Motiver les troupes</t>",
+        private _actionID = player addAction [
+            "<t color='#00FF00'>Regroup team</t>",
             {[] call fnc_startRegroupLoop;},
             [],
             6,
@@ -152,7 +145,7 @@ call fnc_updateRegroupAction;
 
 // EVENT HANDLERS
 [] spawn {
-    private _lastLeaderState = false;
+    private _lastLeaderState = false; // CORRECTION: Corrigé le nom de variable et ajouté "private"
     while {alive player} do {
         private _isLeader = call fnc_isPlayerLeader;
         
@@ -164,7 +157,7 @@ call fnc_updateRegroupAction;
             // Arrêter le regroupement si le joueur n'est plus leader
             if (!_isLeader && {missionNamespace getVariable ["RegroupLoopActive", false]}) then {
                 missionNamespace setVariable ["RegroupLoopActive", false];
-                hint "Regroupement arrêté : leadership perdu";
+                hint "Regrouping stopped: leadership lost";
             };
         };
         

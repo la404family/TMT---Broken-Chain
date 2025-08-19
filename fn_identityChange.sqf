@@ -1,5 +1,5 @@
-// Attribution automatique des identités 1 à 91
-_identitesFrancaises = [
+// Liste des identités
+_identitesTurques = [
     "Soldier01", "Soldier02", "Soldier03", "Soldier04",
     "Soldier05", "Soldier06", "Soldier07", "Soldier08",
     "Soldier09", "Soldier10", "Soldier11", "Soldier12",
@@ -25,34 +25,25 @@ _identitesFrancaises = [
     "Soldier89", "Soldier90", "Soldier91"
 ];
 
-
 // Vérification et attribution des identités
-private _identitesUtilisees = []; // Tableau pour stocker les identités déjà attribuées
+private _identitesUtilisees = [];
 
 {
     if (!isPlayer _x && {side _x == west}) then {
-        // Filtrer les identités non encore utilisées
-        private _identitesDisponibles = _identitesFrancaises - _identitesUtilisees;
-        
-        // Si plus d'identités disponibles, réinitialiser la liste
+        diag_log format ["Unité détectée : %1, Side : %2", _x, side _x];
+        private _identitesDisponibles = _identitesTurques - _identitesUtilisees;
+
         if (count _identitesDisponibles == 0) then {
+            diag_log "Plus d'identités disponibles, réinitialisation.";
             _identitesUtilisees = [];
-            _identitesDisponibles = _identitesFrancaises;
+            _identitesDisponibles = _identitesTurques;
         };
-        
-        // Sélectionner une identité aléatoire parmi celles disponibles
+
         private _identiteAleatoire = selectRandom _identitesDisponibles;
-        
-        // Ajouter l'identité à la liste des utilisées
         _identitesUtilisees pushBack _identiteAleatoire;
-        
-        // Sauvegarde de l'identité originale pour vérification
-        private _originalFace = face _x;
-        private _originalSpeaker = speaker _x;
-        
-        // Application de la nouvelle identité
+
         _x setIdentity _identiteAleatoire;
-        
-        
+        diag_log format ["Identité %1 appliquée à l'unité %2", _identiteAleatoire, _x];
     };
 } forEach allUnits;
+

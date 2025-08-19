@@ -129,4 +129,5 @@ class CfgIdentities
     class Soldier89 { name = "Baran"; speaker = "Male04ENG"; face = "GreekHead_A3_08"; pitch = 0.88; };
     class Soldier90 { name = "Elmas"; speaker = "Male05ENG"; face = "GreekHead_A3_09"; pitch = 1.0; };
     class Soldier91 { name = "Güzel"; speaker = "Male06ENG"; face = "GreekHead_A3_10"; pitch = 1.0; };
+    class hostageVIPID { name = "Kahraman"; speaker = "Male10ENG"; face = "WhiteHead_20"; pitch = 0.98; };
 }

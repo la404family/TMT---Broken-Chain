@@ -5,9 +5,6 @@ fnc_isPlayerLeader = {
 
 // Fonction pour les soins de groupe
 fnc_groupHeal = {
-    if !(call fnc_isPlayerLeader) exitWith {
-        hint "Seul le leader peut donner cet ordre";
-    };
     
     private _healedCount = 0;
     {
@@ -21,7 +18,7 @@ fnc_groupHeal = {
                 sleep 4;
                 if (alive _unit) then {
                     _unit setDamage 0; // Restaure complètement la santé
-                    _unit groupChat format ["%1 : Merci chef, je suis soigné !", name _unit];
+                    _unit groupChat format ["%1 : Teşekkürler !", name _unit];
                 };
             };
             _healedCount = _healedCount + 1;
@@ -29,9 +26,9 @@ fnc_groupHeal = {
     } forEach (units group player);
     
     if (_healedCount > 0) then {
-        hint format ["%1 unité(s) en train de se soigner.", _healedCount];
+        hint format ["%1 treated themselves.", _healedCount];
     } else {
-        hint "Aucune unité blessée à soigner.";
+        hint "No injured units to heal.";
     };
 };
 
@@ -47,7 +44,7 @@ fnc_updateHealAction = {
     // Ajouter l'action si le joueur est leader
     if (call fnc_isPlayerLeader) then {
         _actionID = player addAction [
-            "<t color='#FF0080'>+ Soignez-vous !</t>",
+            "<t color='#FF0080'>+ Healt !</t>",
             {[] call fnc_groupHeal;},
             [],
             5,
