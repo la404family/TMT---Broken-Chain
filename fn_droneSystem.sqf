@@ -23,7 +23,8 @@ if (isNil "droneSurveillance_Active") then {
 // Fonction principale de surveillance
 [] spawn {
     while {droneSurveillance_Active} do {
-        
+
+        droneBLUFOR flyInHeight 100;
         // Supprimer les anciens marqueurs d'ennemis
         {
             deleteMarker _x;
@@ -111,9 +112,9 @@ if (isNil "droneSurveillance_Active") then {
 		// Désactiver la surveillance
 		droneSurveillance_Active = false;
         };
-        
-        // Attendre 35 secondes avant la prochaine mise à jour
-        sleep 35;
+
+        // Attendre 30 secondes avant la prochaine mise à jour
+        sleep 30;
     };
     
     // Nettoyage final
